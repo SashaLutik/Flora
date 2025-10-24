@@ -54,6 +54,7 @@ class MainMenu extends HTMLElement {
 			height: 26px;
 			flex-direction: column;
 			justify-content: center;
+			cursor: pointer;
 		}
 		.settings__btn-close span{
 			background-color: var(--green);
@@ -97,6 +98,7 @@ class MainMenu extends HTMLElement {
 		}
 		.theme__item{
 			margin-bottom: 20px;
+			cursor: pointer;
 		}
 		.theme__item:last-child{
 			margin-bottom: 0;
@@ -145,4 +147,5 @@ function closeTheme() {
 }
 
 theme.addEventListener("click", openTheme);
+
 overlay.addEventListener("click", closeTheme);
