@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Balsamiq Sans';
+    src: local("BalsamiqSans");
+    src: url('../assets/fonts/BalsamiqSans-Bold.woff2') format('woff2'),
+        url('../assets/fonts/BalsamiqSans-Bold.woff') format('woff'),
+        url('../assets/fonts/BalsamiqSans-Bold.eot') format('eot');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Bellota';
+    src: local("Bellota");
+    src: url('../assets/fonts/Bellota-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Bellota-Bold.woff') format('woff'),
+        url('../assets/fonts/Bellota-Bold.eot') format('eot');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+}
