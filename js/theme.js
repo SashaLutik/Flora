@@ -21,7 +21,6 @@ const ThemeManager = {
   },
 
   bindEvents() {
-    // Обработчик выбора темы
     document.addEventListener("click", (e) => {
       const themeItem = e.target.closest(".theme__item");
       if (themeItem) {
@@ -33,23 +32,12 @@ const ThemeManager = {
     });
   },
 
-  // Публичные методы
-  setTheme(theme) {
-    if (this.themes.includes(theme)) {
-      this.applyTheme(theme);
-    }
-  },
-
   getCurrentTheme() {
     return document.body.className;
   },
 };
 
-// Автоматическая инициализация
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => ThemeManager.init());
-} else {
-  ThemeManager.init();
-}
+ThemeManager.init();
 
 window.ThemeManager = ThemeManager;
+
