@@ -1,0 +1,158 @@
+:root,
+.light_theme {
+  --col_bg: #efe7db;
+  --col_decor: #dce3cb;
+  --light_green: #c3c8aa;
+  --green: #9ab288;
+  --pink: #be634f;
+  --col_text: #546640;
+  --white_text: #ffffff;
+  --lwhite_text: #0000004d;
+  --dgreen: #87a17533;
+  --lgreen: #8fa06e80;
+}
+body.dark_theme {
+  --col_bg: #0a0d09;
+  --col_decor: #121610;
+  --light_green: #272e26;
+  --green: #455043;
+  --pink: #9c5645;
+  --col_text: #a3a098;
+  --white_text: #ffffff;
+  --lwhite_text: #ffffff4d;
+  --dgreen: #505d4b80;
+  --lgreen: #81827633;
+}
+body.peach_theme {
+  --col_bg: #FFF6E2;
+  --col_decor: #FFE0D3;
+  --light_green: #FFCAB6;
+  --green: #F3A383;
+  --pink: #6B936F;
+  --col_text: #6D6250;
+  --white_text: #ffffff;
+  --lwhite_text: #0000004d;
+  --dgreen: #ff9e8880;
+  --lgreen: #e2806933;
+}
+body.spring_theme {
+  --col_bg: #F5F2EB;
+  --col_decor: #F3D7D8;
+  --light_green: #F2BDB6;
+  --green: #E3937F;
+  --pink: #54836C;
+  --col_text: #5D564D;
+  --white_text: #ffffff;
+  --lwhite_text: #0000004d;
+  --dgreen: #67894f33;
+  --lgreen: #eda7a080;
+}
+/* ================================= */
+body {
+  font-family: "Balsamiq Sans", sans-serif;
+  background-color: var(--col_bg);
+  font-size: 18px;
+  color: var(--col_text);
+}
+body.no-scroll{
+	overflow: hidden;
+}
+.container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+h3 {
+	font-size: 32px;
+}
+h4 {
+  font-size: 24px;
+}
+
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+/* ================================= */
+.plant1{
+	width: 109px;
+	height: 192px;
+}
+.plant2{
+	width: 95px;
+	height: 145px;
+}
+.plant3{
+	width: 130px;
+	height: 210px;
+}
+.plant4{
+	width: 91px;
+	height: 201px;
+}
+.plant1,
+.plant2,
+.plant3,
+.plant4,
+.decor-plant{
+	color: var(--col_decor);
+}
+/* ================================= */
+.settings__wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--col_bg);
+	z-index: 2;
+	transform: translateX(-100%);
+	transition: .3s;
+}
+
+/* ================================= */
+.settings__btn {
+  margin: 20px 20px 25px 20px;
+}
+.settings{
+	transition: .5s;
+}
+/* ================================= */
+
+.footer {
+  position: relative;
+}
+.footer__menu {
+  background-color: var(--light_green);
+  padding: 25px 0;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.menu__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__item {
+  margin: 0 30px;
+}
+.menu__item:first-child {
+  margin-left: 0;
+}
+.menu__item:last-child {
+  margin-right: 0;
+}
+.menu__icon{
+  width: 26px;
+  height: 26px;
+  color: var(--green);
+}
+.menu__icon-accent{
+  width: 26px;
+  height: 26px;
+  color: var(--pink);
+}
