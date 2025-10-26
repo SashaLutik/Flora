@@ -70,7 +70,11 @@
   width: calc(100% - 54px);
   margin: 0 auto;
 }
-.flower__buttons-links a:first-child {
+.flower__buttons-links{
+	display: flex;
+	align-items: flex-start;
+}
+.flower__buttons-links button {
   margin-right: 20px;
 }
 .flower__btn-more {
@@ -338,3 +342,4 @@
 .accordion__btn.active {
   transform: rotate(180deg);
 }
+
