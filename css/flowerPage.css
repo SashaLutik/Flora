@@ -1,3 +1,6 @@
+.flower__intro{
+	height: 100dvh;
+}
 .flower__intro-video {
   position: fixed;
   top: 0;
@@ -342,4 +345,5 @@
 .accordion__btn.active {
   transform: rotate(180deg);
 }
+
 
