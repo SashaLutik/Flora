@@ -192,6 +192,7 @@ const shareButton = document.getElementById("shareButton");
 function shareApp() {
   const shareData = {
     title: "Flora",
+	text: "Загляните в удивительный мир цветов",
     url: window.location.href,
   };
 
@@ -214,3 +215,4 @@ function fallbackShare() {
 }
 
 shareButton.addEventListener("click", shareApp);
+
