@@ -187,3 +187,15 @@ h4 {
   color: var(--pink);
 }
 
+@media (max-width: 365px) {
+  .container {
+    padding: 0 10px;
+  }
+  .settings__btn {
+    margin: 20px 20px 25px 10px;
+  }
+  .notification__list {
+    padding: 0 10px;
+  }
+}
+
