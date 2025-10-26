@@ -1,4 +1,4 @@
-
+:root,
 .light_theme {
   --col_bg: #efe7db;
   --col_decor: #dce3cb;
@@ -47,7 +47,7 @@ body.spring_theme {
   --dgreen: #67894f33;
   --lgreen: #eda7a080;
 }
-
+:root,
 body.text-normal {
   --text-small: 14px;
   --text-normal: 16px;
@@ -203,3 +203,4 @@ h4 {
     padding: 0 10px;
   }
 }
+
