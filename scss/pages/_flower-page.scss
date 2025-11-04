@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../importer" as *;
+@forward "../sections/flower-intro";
+@forward "../sections/flower-names";
+@forward "../sections/flower-details";
+@forward "../sections/flower-information";
+@forward "../sections/flower-accordeon";
+
+.flower__page {
+  @include theme-colors($color: text_white);
+  font-size: var(--font-size-base);
+  .page {
+    @include theme-colors($color: text);
+    &__nav {
+      @include d-flex(space-between, center);
+    }
+    &__btn {
+      padding: 30px 30px 30px 25px;
+    }
+    &__menu {
+      flex-direction: column;
+      padding: 25px 25px 36px 30px;
+      & span {
+        @include size(3px, 3px);
+        border-radius: 5px;
+        background-color: #fff;
+      }
+    }
+  }
+}

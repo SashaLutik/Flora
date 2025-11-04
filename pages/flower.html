@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="../css/main.css"/>
+    <title></title>
+    <style>
+      .page__header {
+        background: 0 30% / cover no-repeat, #000000;
+        overflow: hidden;
+        border-radius: 0 0 40px 40px;
+        min-height: 278px;
+      }
+    </style>
+  </head>
+  <body class="flower__page">
+    <div class="flower">
+      <div class="flower__intro-video">
+        <video
+          class="flower-video"
+          src=""
+          autoplay
+          muted
+          playsinline
+          loop
+          preload="none"
+        ></video>
+      </div>
+      <div class="flower__intro-content">
+        <div class="flower__intro-header">
+          <a class="flower__intro-prev" href="./search.html">
+            <img src="../assets/images/icons/arrow-left.svg" alt="" />
+          </a>
+        </div>
+        <h1 class="flower__intro-name text-center"></h1>
+        <div class="flower__intro-list">
+          <div class="container">
+            <p class="flower__intro-desc text-center mb-xl"></p>
+            <span class="block"></span>
+            <div class="flower__buttons">
+              <div class="flower__buttons-links">
+                <button id="shareFlower" class="mr-20">
+                  <img src="../assets/images/icons/share-icon.svg" alt="" />
+                </button>
+                <button class="flower__buttons-fav" id="favoriteBtnHeart"> <!-- кнопка избранного -->
+                  <svg
+                    class="favorite-icon"
+                    viewBox="0 0 24 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 8.1387L10.6584 5.52901C10.326 4.88252 9.74813 3.95244 8.93112 3.20152C8.12674 2.46222 7.16473 1.95886 6 1.95886C3.48601 1.95886 1.5 3.89372 1.5 6.21874C1.5 7.98553 2.33059 9.23242 4.30233 11.1351C4.80714 11.6223 5.38402 12.1488 6.02033 12.7296C7.68293 14.2472 9.7513 16.1351 12 18.658C14.2487 16.1351 16.3171 14.2472 17.9797 12.7296C18.616 12.1488 19.1929 11.6223 19.6977 11.1351C21.6694 9.23242 22.5 7.98553 22.5 6.21874C22.5 3.89372 20.514 1.95886 18 1.95886C16.8353 1.95886 15.8733 2.46222 15.0689 3.20152C14.2519 3.95244 13.674 4.88252 13.3416 5.52901L12 8.1387ZM12.5873 20.2352C12.2816 20.5883 11.7184 20.5883 11.4127 20.2352C9.01039 17.4609 6.83729 15.4773 5.04761 13.8438C1.9492 11.0156 0 9.23647 0 6.21874C0 3.06037 2.68629 0.5 6 0.5C8.40023 0.5 10.0778 2.03081 11.1053 3.4292C11.4963 3.9614 11.7932 4.47443 12 4.87659C12.2068 4.47443 12.5037 3.9614 12.8947 3.4292C13.9222 2.03081 15.5998 0.5 18 0.5C21.3137 0.5 24 3.06037 24 6.21874C24 9.23647 22.0508 11.0156 18.9524 13.8438C17.1627 15.4773 14.9896 17.4609 12.5873 20.2352Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <button class="flower__btn-more" id="nextBtn">Узнать больше</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page hidden">
+      <header class="page__header">
+        <div class="page__nav">
+          <button class="page__btn inline-block" id="prewBtn">
+            <img src="../assets/images/icons/arrow-left.svg" alt="" />
+          </button>
+          <a href="#" class="hidden">
+            <div class="page__menu flex">
+              <span class="mb-xs"></span>
+              <span class="mb-xs"></span>
+              <span></span>
+            </div>
+          </a>
+        </div>
+      </header>
+      <main class="page__main">
+        <section class="names mb-lg">
+          <div class="container">
+            <div class="names__info">
+              <h4 class="names__title mb-xs"></h4>
+              <div class="names__list">
+                <p class="names__list-text">
+                  Научное название: <span id="scientific"></span>
+                </p>
+                <p class="names__list-text">
+                  Общее название: <span id="common"></span>
+                </p>
+              </div>
+            </div>
+            <div class="names__btn-box flex mt-lg">
+              <button class="names__btn favorite-btn" id="favoriteBtnText"><!-- кнопка избранного -->
+                Добавить в мои растения</button>
+            </div>
+          </div>
+        </section>
+        <section class="details mb-lg">
+          <div class="details__bg">
+            <svg class="plant2">
+              <use href="../assets/images/decor.svg#decor2"></use>
+            </svg>
+            <svg class="plant6">
+              <use href="../assets/images/decor.svg#decor6"></use>
+            </svg>
+          </div>
+          <div class="container">
+            <div class="details__cards">
+              <div class="details__cards-item">
+                <div class="details__cards-icon mb-sm text-center">
+                  <svg
+                    class="card__icon inline"
+                    viewBox="0 0 29 35"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="currentColor"
+                      d="M11.92 35H4.5847C4.21988 35 3.87005 34.8515 3.61203 34.5869C3.35409 34.3224 3.20925 33.9637 3.20929 33.5896L3.20921 27.9483C3.20921 27.1694 3.82498 26.538 4.58458 26.538L6.87695 26.538L6.87695 17.1358H1.37529C1.01056 17.1358 0.660643 16.9873 0.402745 16.7228C0.144766 16.4583 -7.9871e-05 16.0997 1.16372e-06 15.7256L1.34086e-09 8.67394C-8.13655e-05 4.00805 3.7019 0.212047 8.25232 0.212005C10.4567 0.212005 12.5289 1.09225 14.0876 2.69052C15.6463 4.28879 16.5047 6.41366 16.5046 8.67394V15.7256C16.5046 16.5045 15.8889 17.1359 15.1293 17.1359L9.62762 17.1359V26.5381H11.92C12.2998 26.5381 12.6437 26.6959 12.8925 26.9511C13.1414 27.2062 13.2954 27.5589 13.2954 27.9484L13.2954 33.5897C13.2954 33.9637 13.1506 34.3225 12.8927 34.587C12.6347 34.8514 12.2848 35.0001 11.92 35ZM13.7539 14.3152V8.67394C13.7538 7.16711 13.1817 5.75039 12.1426 4.68494C11.1035 3.6194 9.72191 3.03262 8.25249 3.03262C5.21887 3.03271 2.75087 5.56339 2.75083 8.67402L2.75083 14.3153L6.87703 14.3153L6.87703 10.5544C6.87703 9.77554 7.4928 9.14413 8.2524 9.14413C8.63225 9.14413 8.97611 9.30194 9.22495 9.5571C9.47388 9.81235 9.62782 10.1649 9.6277 10.5544L9.6277 14.3152H13.7539ZM10.5446 29.3586L5.96003 29.3586L5.96003 32.1793L10.5446 32.1793V29.3586Z"
+                    />
+                    <path fill="currentColor"
+                      d="M24.7011 4.03684H20.4767C20.1635 4.03684 19.9427 4.22945 20.0417 4.41631L20.6527 5.56972C20.7149 5.68738 20.8899 5.76692 21.0868 5.76692H24.0911C24.2881 5.76692 24.463 5.68731 24.5253 5.56972L25.1363 4.41631C25.2351 4.22945 25.0143 4.03684 24.7011 4.03684Z"
+                    />
+                    <path fill="currentColor"
+                      d="M23.9628 6.92033H21.215C20.9622 6.92033 20.757 7.04947 20.757 7.2087V15.2824C20.757 15.4416 20.9621 15.5708 21.215 15.5708H23.9628C24.2156 15.5708 24.4209 15.4417 24.4209 15.2824V7.2087C24.4209 7.04947 24.2156 6.92033 23.9628 6.92033Z"
+                    />
+                    <path fill="currentColor"
+                      d="M25.7948 0H19.3831C19.1304 0 18.9251 0.129148 18.9251 0.288369V2.59512C18.9251 2.75428 19.1303 2.88349 19.3831 2.88349H25.7948C26.0475 2.88349 26.2528 2.75434 26.2528 2.59512V0.288369C26.2527 0.129148 26.0475 0 25.7948 0Z"
+                    />
+                    <path fill="currentColor"
+                      d="M28.2358 23.0758L24.7707 22.5447C24.5655 22.513 24.4207 22.3977 24.4207 22.2645V17.0125C24.4207 16.8534 24.2156 16.7241 23.9627 16.7241H21.2149C20.9621 16.7241 20.7569 16.8533 20.7569 17.0125V22.2645C20.7569 22.3977 20.6122 22.513 20.407 22.5447L16.9419 23.0758C16.5014 23.122 16.1771 23.3624 16.1771 23.6445V34.025C16.1771 34.3433 16.5874 34.6016 17.093 34.6016C17.5986 34.6016 18.0089 34.3433 18.0089 34.025V24.3775C18.0089 24.2367 18.171 24.1162 18.3918 24.0931L19.3077 23.9968C19.5871 23.9674 19.8407 24.1029 19.8407 24.2811V34.025C19.8407 34.3433 20.2511 34.6016 20.7567 34.6016C21.2622 34.6016 21.6726 34.3433 21.6726 34.025V23.7483L22.5135 23.66C22.5629 23.6548 22.6143 23.6548 22.6636 23.66L23.5045 23.7483V34.025C23.5045 34.3433 23.9149 34.6016 24.4204 34.6016C24.926 34.6016 25.3363 34.3433 25.3363 34.025V24.2811C25.3363 24.1029 25.5901 23.9674 25.8694 23.9968L26.7853 24.0931C27.0061 24.1161 27.1682 24.2361 27.1682 24.3774V34.0249C27.1682 34.3432 27.5785 34.6016 28.0841 34.6016C28.5896 34.6016 29 34.3432 29 34.0249V23.6444C29.0005 23.3624 28.6764 23.1219 28.2358 23.0758Z"
+                    />
+                  </svg>
+                  <p>Уход</p>
+                </div>
+                <div class="details__cards-text text-center">
+                  <h5 class="care-cultiv"></h5>
+                </div>
+              </div>
+              <div class="details__cards-item">
+                <div class="details__cards-icon mb-sm text-center">
+                  <svg
+                    class="card__icon inline"
+                    viewBox="0 0 35 35"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="currentColor"
+                      d="M0.458765 34.6342C-0.140313 34.1117 -0.140313 33.1453 0.386587 32.5512L3.23762 29.5735C4.21202 28.6072 5.48957 28.013 6.8393 28.013C8.18903 28.013 9.46658 28.5356 10.441 29.5735C11.2638 30.3895 12.6208 30.3895 13.4436 29.5735C14.4324 28.5213 15.876 27.8412 17.1969 27.8627C18.5466 27.8627 19.8241 28.3853 20.7985 29.4232C20.7985 29.4232 21.809 30.6973 22.8267 30.6114C23.8372 30.6687 24.7034 29.5663 24.7034 29.5663C25.6778 28.6 26.9553 28.0059 28.3051 28.0059C29.6548 28.0059 30.9323 28.5284 31.9067 29.5663L34.6134 32.3222C35.1403 32.9163 35.1403 33.811 34.5412 34.4051C33.9422 34.9992 33.0399 34.9277 32.4409 34.3335L29.7342 31.5777C28.9041 30.6185 27.3884 30.8906 26.6522 31.9499C25.6778 32.9163 24.4002 33.5104 23.0505 33.5104C21.7296 33.5533 20.0984 32.9234 18.9219 31.4274C18.2073 30.6114 16.8504 30.4682 15.9193 31.4274C15.0893 32.4009 13.5086 33.174 12.166 33.1382C10.8163 33.1024 9.45937 32.6156 8.56436 31.5777C7.74153 30.7617 6.38458 30.7617 5.56175 31.5777L2.71072 34.5554C2.26322 34.8561 1.49091 35.3428 0.458765 34.6342Z"
+                    />
+                    <path fill="currentColor"
+                      d="M17.6588 25.0282C10.3688 24.5486 8.27565 18.7721 8.27565 15.4221C8.27565 10.5833 15.6378 1.5714 16.5328 0.526332C17.1319 -0.203784 18.2651 -0.14652 18.7848 0.526332C19.6076 1.5714 27.3162 10.5117 27.0419 15.4221C26.5511 24.162 19.1529 25.1212 17.6588 25.0282ZM17.6588 3.80469C14.8078 7.45527 11.4298 12.8953 11.2783 15.4221C11.1483 17.6339 13.0322 22.1077 17.6588 22.1077C18.6982 22.1077 23.7867 21.4205 24.1187 15.4937C24.0393 12.8882 20.5098 7.45527 17.6588 3.80469Z"
+                    />
+                  </svg>
+                  <p>Полив</p>
+                </div>
+                <div class="details__cards-text text-center padding">
+                  <h5 class="care-watering"></h5>
+                </div>
+              </div>
+              <div class="details__cards-item">
+                <div class="details__cards-icon mb-sm text-center">
+                  <svg
+                    class="card__icon inline"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path stroke="currentColor"
+                      d="M21.8569 20.0102C20.4644 22.4221 17.3804 23.2484 14.9685 21.8559C12.5567 20.4635 11.7303 17.3795 13.1228 14.9676C14.5153 12.5558 17.5993 11.7294 20.0111 13.1219C22.423 14.5144 23.2493 17.5984 21.8569 20.0102Z"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path stroke="currentColor"
+                      d="M16.8726 3.91405L15.9912 5.18389C15.5302 5.84813 15.2996 6.18025 14.9918 6.36589C14.7205 6.52954 14.4084 6.61316 14.0916 6.6071C13.7323 6.60023 13.3665 6.42786 12.6352 6.08313L11.2369 5.42409C9.67095 4.68599 8.88797 4.31693 8.32265 4.44563C7.83071 4.55761 7.41507 4.88466 7.19053 5.33648C6.93249 5.85566 7.10704 6.7035 7.45618 8.39909L7.74464 9.80064C7.91523 10.6291 8.00056 11.0433 7.91454 11.4057C7.83888 11.7247 7.67138 12.0149 7.43288 12.2399C7.16213 12.4955 6.76071 12.6288 5.95795 12.8953L4.60002 13.3461C2.95698 13.8916 2.13546 14.1644 1.81482 14.6475C1.53578 15.0679 1.4604 15.5913 1.60942 16.0733C1.7806 16.6273 2.49167 17.1209 3.91393 18.108L5.18374 18.9894C5.84802 19.4503 6.18011 19.6809 6.36573 19.9887C6.5294 20.2601 6.61302 20.5721 6.60699 20.8889C6.60012 21.2483 6.42775 21.614 6.08298 22.3454L5.42397 23.7436C4.68586 25.3096 4.31679 26.0926 4.44548 26.6579C4.5575 27.1498 4.88452 27.5655 5.33633 27.7901C5.85552 28.0481 6.70341 27.8734 8.39895 27.5244L9.80056 27.2358C10.629 27.0653 11.0431 26.98 11.4055 27.066C11.7247 27.1416 12.0148 27.3091 12.2398 27.5477C12.4953 27.8184 12.6287 28.2198 12.8952 29.0225L13.346 30.3805C13.8915 32.0235 14.1642 32.8451 14.6473 33.1658C15.0677 33.4448 15.5912 33.5201 16.0731 33.3712C16.6271 33.2 17.1207 32.4889 18.1078 31.0666L18.9892 29.7968C19.4502 29.1325 19.6808 28.8004 19.9886 28.6148C20.2599 28.4512 20.572 28.3675 20.8887 28.3736C21.2481 28.3804 21.6139 28.5528 22.3452 28.8976L23.7435 29.5565C25.3094 30.2947 26.0925 30.6637 26.6578 30.535C27.1497 30.423 27.5653 30.0961 27.7899 29.6442C28.048 29.125 27.8733 28.2771 27.5243 26.5814L27.2357 25.18C27.0651 24.3515 26.98 23.9373 27.0659 23.575C27.1414 23.2559 27.3089 22.9658 27.5475 22.7408C27.8184 22.4851 28.2196 22.3519 29.0224 22.0853L30.3805 21.6344C32.0234 21.089 32.845 20.8163 33.1656 20.3332C33.4446 19.9128 33.52 19.3893 33.3711 18.9073C33.1998 18.3534 32.4887 17.8598 31.0665 16.8727L29.7967 15.9913C29.1324 15.5303 28.8002 15.2997 28.6146 14.992C28.451 14.7206 28.3674 14.4086 28.3735 14.0918C28.3803 13.7324 28.5526 13.3667 28.8974 12.6353L29.5564 11.2371C30.2946 9.67111 30.6636 8.88809 30.5348 8.32275C30.4229 7.83083 30.0959 7.41523 29.6441 7.19067C29.1248 6.93259 28.277 7.10713 26.5813 7.45623L25.1799 7.74478C24.3514 7.91537 23.9371 8.00061 23.5749 7.91468C23.2558 7.83901 22.9657 7.67151 22.7406 7.43302C22.4849 7.16219 22.3518 6.76085 22.0853 5.95808L21.6343 4.60008C21.0889 2.95708 20.8161 2.13556 20.3331 1.81495C19.9127 1.53594 19.3892 1.46052 18.9072 1.60952C18.3533 1.78072 17.8597 2.49183 16.8726 3.91405Z"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p>Свет</p>
+                </div>
+                <div class="details__cards-text text-center">
+                  <h5 class="care-light"></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="info">
+          <div class="info__bg">
+            <svg class="plant5">
+              <use href="../../assets/images/decor.svg#decor5"></use>
+            </svg>
+            <svg class="plant1">
+              <use href="../../assets/images/decor.svg#decor1"></use>
+            </svg>
+          </div>
+          <div class="container">
+            <ul class="info__list mb-lg">
+              <li class="info__list-item mb-sm">
+                <p class="info__item-text">
+                  Общее название: <span class="info-common"></span>
+                </p>
+              </li>
+              <li class="info__list-item mb-sm">
+                <p class="info__item-text">
+                  Тип растения: <span class="info-type"></span>
+                </p>
+              </li>
+              <li class="info__list-item mb-sm">
+                <p class="info__item-text">
+                  Размер: <span class="info-size"></span>
+                </p>
+              </li>
+              <li class="info__list-item mb-sm">
+                <p class="info__item-text">
+                  Время цветения: <span class="info-period"></span>
+                </p>
+              </li>
+              <li class="info__list-item mb-sm">
+                <p class="info__item-text">
+                  Цвет:
+                  <span class="info-colors"></span>
+                </p>
+              </li>
+              <li class="info__list-item">
+                <p class="info__item-text">
+                  Ареал: <span class="info-area"></span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="accordion">
+          <div class="container">
+            <ul class="accordion__inner">
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#galery-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__item-text">Изображение</p>
+                  </div>
+                  <div class="accordion__item-btn active">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list active">
+                  <div class="accordion__img-box mt-lg flex">
+                    <img class="accordion-image" src="" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#sun-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Свет</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-light"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#rain-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Полив</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-watering"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#soil-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Почва</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-soil"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#cultiv-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Выращивание</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-cultiv"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#fertilizer-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Удобрение</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-fertilizer"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#pest-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Вредители и болезни</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-pest"></div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <div class="accordion__item-panel">
+                  <div class="accordion__item-name">
+                    <svg class="accordion__item-decor">
+                      <use
+                        href="../assets/images/flowers/flowers-decor.svg#varieties-decor"
+                      ></use>
+                    </svg>
+                    <p class="accordion__name-text">Разновидности</p>
+                  </div>
+                  <div class="accordion__item-btn">
+                    <span class="accordion__arrow block"></span>
+                  </div>
+                </div>
+                <div class="accordion__list">
+                  <div class="accordion__text-box mt-lg accordion-varieties"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+	<script src="../js/theme-manager.js"></script>
+	<script src="../js/flowers-data.js"></script>
+	<script src="../js/favorites-manager.js"></script>
+	<script src="../js/flower-page.js"></script>
+	<script src="../js/font-size.js"></script>	
+  </body>
+</html>

@@ -1,0 +1,86 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.home__page {
+  @include theme-colors($color: text);
+  .plant1 {
+    @include position(fixed, $top: 0, $right: 0, $z-index: -900);
+  }
+  .plant2 {
+    @include position(fixed, $top: 175px, $left: 0, $z-index: -900);
+    @media (max-height: 535px) {
+      top: 45px;
+    }
+  }
+  .plant3 {
+    @include position(fixed, $bottom: 0, $left: 10px, $z-index: -900);
+    @media (max-height: 535px) {
+      bottom: -60px;
+    }
+  }
+  .plant4 {
+    @include position(fixed, $top: 275px, $right: 0, $z-index: -900);
+    @media (max-height: 535px) {
+      top: 205px;
+    }
+  }
+  .button {
+    &__top-inner {
+      @include d-flex(center, center);
+    }
+    &__top-link {
+      @include theme-colors($color: primary, $bg: decor_dark);
+      padding: 15px 19px;
+      max-width: 290px;
+      flex-basis: 100%;
+      align-self: stretch;
+      align-content: center;
+      border-radius: 10px;
+      :last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__top-title {
+      font-family: map.get($font-family, secondary);
+    }
+    &__plant-btn {
+      @include size(47px, 46px);
+      @include theme-colors($color: primary);
+    }
+  }
+  .bouquet {
+    &__btn-link {
+      @include d-flex(space-between, center);
+      @include m-width(600px);
+      @include theme-colors($color: text_white, $bg: primary);
+      border-radius: 10px;
+      padding: 5px 0 0 15px;
+    }
+    &__img {
+      border-radius: 10px;
+    }
+  }
+  .notification {
+    &__inner {
+      @include d-flex(space-between, center);
+      @include m-width(600px);
+      @include theme-colors($bg: decor_dark);
+      padding: 17px 20px 17px 15px;
+      border-radius: 10px;
+    }
+    &__close {
+      padding: 20px 10px;
+      span {
+        @include size(20px, 1.5px);
+        @include theme-colors($bg: text);
+        border-radius: 5px;
+        transform: rotate(45deg);
+      }
+      span::after {
+		@include after(20px, 1.5px, $bg: text, $rotate: 90deg);
+        border-radius: 5px;
+      }
+    }
+  }
+}

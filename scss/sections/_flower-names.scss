@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.flower__page {
+  .names {
+    &__info {
+      @include theme-colors($bg: primary);
+      border-radius: 20px;
+      padding: 15px;
+      margin-top: -62px;
+      min-height: 124px;
+      @include d-flex(center, normal, $direction: column);
+      box-shadow: 0 2px 4px #00000040;
+    }
+    &__title {
+      @include theme-colors($color: text_white);
+    }
+
+    &__list-text {
+      @include theme-colors($color: translucent);
+      & span {
+        font-family: map.get($font-family, secondary);
+      }
+    }
+    &__btn {
+      @include theme-colors($color: text_white, $bg: primary);
+      border-radius: 10px;
+      flex-basis: 100%;
+      padding: 10px;
+      transition: 0.3s;
+      &.active {
+        @include theme-colors($color: translucent);
+        background-color: transparent;
+        padding: 5px;
+      }
+    }
+  }
+}

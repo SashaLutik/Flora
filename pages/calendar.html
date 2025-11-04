@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script type="module" src="../components/settings-menu.js"></script>
+    <title>Календарь</title>
+  </head>
+  <body class="calendar__page">
+    <settings-menu class="settings__wrapper"></settings-menu>
+    <header class="header">
+      <button class="settings__btn" id="settingsBtn">
+        <svg class="menu__icon">
+          <use href="../assets/images/icons/menu.svg#settings-menu"></use>
+        </svg>
+      </button>
+    </header>
+    <main class="main">
+      <section class="notification">
+        <div class="container">
+          <h2 class="notification__title">Задать напоминание</h2>
+        </div>
+        <div class="notification__container-list mt-lg mb-xxl">
+          <ul class="notification__list flex" id="notificationList">
+            <li class="notification__item mr-15">
+              <a
+                href="./favorites.html"
+                class="notification__link inline-block"
+              >
+                <div class="notification__link-box all mb-xs">
+                  <svg
+                    class="all-icon"
+                    viewBox="0 0 18 18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M0 1.92857C0 0.863451 0.863451 0 1.92857 0L5.78571 0C6.85083 0 7.71429 0.863451 7.71429 1.92857V5.78571C7.71429 6.85083 6.85083 7.71429 5.78571 7.71429H1.92857C0.863451 7.71429 0 6.85083 0 5.78571L0 1.92857ZM1.92857 1.28571C1.57353 1.28571 1.28571 1.57353 1.28571 1.92857V5.78571C1.28571 6.14075 1.57353 6.42857 1.92857 6.42857H5.78571C6.14075 6.42857 6.42857 6.14075 6.42857 5.78571V1.92857C6.42857 1.57353 6.14075 1.28571 5.78571 1.28571H1.92857ZM10.2857 1.92857C10.2857 0.863451 11.1492 0 12.2143 0L16.0714 0C17.1365 0 18 0.863451 18 1.92857V5.78571C18 6.85083 17.1365 7.71429 16.0714 7.71429H12.2143C11.1492 7.71429 10.2857 6.85083 10.2857 5.78571V1.92857ZM12.2143 1.28571C11.8592 1.28571 11.5714 1.57353 11.5714 1.92857V5.78571C11.5714 6.14075 11.8592 6.42857 12.2143 6.42857H16.0714C16.4265 6.42857 16.7143 6.14075 16.7143 5.78571V1.92857C16.7143 1.57353 16.4265 1.28571 16.0714 1.28571H12.2143ZM0 12.2143C0 11.1492 0.863451 10.2857 1.92857 10.2857H5.78571C6.85083 10.2857 7.71429 11.1492 7.71429 12.2143V16.0714C7.71429 17.1365 6.85083 18 5.78571 18H1.92857C0.863451 18 0 17.1365 0 16.0714L0 12.2143ZM1.92857 11.5714C1.57353 11.5714 1.28571 11.8592 1.28571 12.2143V16.0714C1.28571 16.4265 1.57353 16.7143 1.92857 16.7143H5.78571C6.14075 16.7143 6.42857 16.4265 6.42857 16.0714V12.2143C6.42857 11.8592 6.14075 11.5714 5.78571 11.5714H1.92857ZM10.2857 12.2143C10.2857 11.1492 11.1492 10.2857 12.2143 10.2857H16.0714C17.1365 10.2857 18 11.1492 18 12.2143V16.0714C18 17.1365 17.1365 18 16.0714 18H12.2143C11.1492 18 10.2857 17.1365 10.2857 16.0714V12.2143ZM12.2143 11.5714C11.8592 11.5714 11.5714 11.8592 11.5714 12.2143V16.0714C11.5714 16.4265 11.8592 16.7143 12.2143 16.7143H16.0714C16.4265 16.7143 16.7143 16.4265 16.7143 16.0714V12.2143C16.7143 11.8592 16.4265 11.5714 16.0714 11.5714H12.2143Z"
+                    />
+                  </svg>
+                </div>
+                <h5 class="notification__name text-center">Все</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="calendar">
+        <div class="container">
+          <div class="calendar__panel mb-sm" id="calendarPanel">
+            <div class="calendar__date">
+              <svg
+                class="calendar__icon"
+                viewBox="0 0 22 22"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.8125 0C5.1922 0 5.5 0.307804 5.5 0.6875V1.375H16.5V0.6875C16.5 0.307804 16.8078 0 17.1875 0C17.5672 0 17.875 0.307804 17.875 0.6875V1.375H19.25C20.7688 1.375 22 2.60622 22 4.125V19.25C22 20.7688 20.7688 22 19.25 22H2.75C1.23122 22 0 20.7688 0 19.25V4.125C0 2.60622 1.23122 1.375 2.75 1.375H4.125V0.6875C4.125 0.307804 4.4328 0 4.8125 0ZM18.5 4.125H3.5C3.08579 4.125 2.75 4.4328 2.75 4.8125V6.1875C2.75 6.5672 3.08579 6.875 3.5 6.875H18.5C18.9142 6.875 19.25 6.5672 19.25 6.1875V4.8125C19.25 4.4328 18.9142 4.125 18.5 4.125ZM15.8125 9.625C15.4328 9.625 15.125 9.9328 15.125 10.3125V11.6875C15.125 12.0672 15.4328 12.375 15.8125 12.375H17.1875C17.5672 12.375 17.875 12.0672 17.875 11.6875V10.3125C17.875 9.9328 17.5672 9.625 17.1875 9.625H15.8125Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3 class="calendar__title"></h3>
+            </div>
+            <div class="calendar__panel-btn">
+              <div class="calendar__prev arrow-btn">
+                <span class="calendar__arrow block"></span>
+              </div>
+              <div class="calendar__next arrow-btn">
+                <span class="calendar__arrow block"></span>
+              </div>
+            </div>
+          </div>
+          <div class="calendar__list">
+            <div class="calendar__list-header">
+              <h5>Пн</h5>
+              <h5>Вт</h5>
+              <h5>Ср</h5>
+              <h5>Чт</h5>
+              <h5>Пт</h5>
+              <h5>Сб</h5>
+              <h5>Вс</h5>
+            </div>
+            <div class="calendar__list-main"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notes">
+        <div class="notes__inner">
+          <div class="container">
+            <div class="notes__panel mb-xl">
+              <div class="notes__title">
+                <h3>Октябрь 25 2025г.</h3>
+              </div>
+              <div class="notes__close"><span class="block"></span></div>
+            </div>
+			<div class="notes__text-box mb-lg hidden">Текст заметки</div>
+            <div class="notes__btn">
+              <p>Добавить заметку</p>
+            </div>
+          </div>
+        </div>
+        <div class="notes__overlay hidden"></div>
+      </section>
+
+      <section class="popup">
+        <div class="popup__content">
+          <div class="popup__panel">
+            <div class="container">
+              <div class="popup__nav">
+                <button class="popup__prev">
+                  <img src="../assets/images/icons/arrow-left.svg" alt="" />
+                </button>
+                <h3 class="popup__title text-center">Добавить заметку</h3>
+              </div>
+            </div>
+          </div>
+          <div class="popup__inner mt-xxl">
+            <textarea
+              class="popup__input"
+              placeholder="Напишите что нибудь"
+            ></textarea>
+          </div>
+        </div>
+        <div class="popup__action">
+          <button class="popup__save-btn"><h3>Сохранить</h3></button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__menu">
+        <ul class="menu__inner">
+          <li class="menu__item">
+            <a href="../index.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#home-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./search.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#search-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./calendar.html" class="menu__item-link">
+              <svg class="menu__icon-accent">
+                <use href="../assets/images/icons/menu.svg#calendar-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./favorites.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#plant-menu"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/calendar-page.js"></script>
+	<script src="../js/font-size.js"></script>	
+  </body>
+</html>

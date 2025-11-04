@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="stylesheet" href="../css/main.css"/>
+	<script type="module" src="../components/settings-menu.js"></script>
+    <title>Мои растения</title>
+</head>
+<body class="favorites__page">
+    <settings-menu class="settings__wrapper"></settings-menu>
+    <header class="header">
+      <button class="settings__btn" id="settingsBtn">
+        <svg class="menu__icon">
+            <use  href="../assets/images/icons/menu.svg#settings-menu"></use>
+        </svg>
+      </button>
+    </header>
+    <main class="main">
+      <div class="panel mb-xxl">
+        <div class="container">
+          <div class="panel__inner">
+            <button class="panel__btn active" data-target-id="contentPage1"><h2>Мои растения </h2>
+                <span mt-xs block></span>
+            </button>
+            <button class="panel__btn" data-target-id="contentPage2"><h2>Мои букеты</h2>
+                <span mt-xs block></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+      <div class="content" id="contentPage1">
+		  <div class="content__list" id="favoritesList"></div>
+          <div class="content__empty text-center" id="emptyState">
+            <div class="content__bg mb-xxl">
+              	<svg class="decor__plant">
+      				<use href="../assets/images/decor.svg#decor-plant"></use>
+    			</svg>
+            </div>
+            <p class="content__empty-text mb-lg">
+              Вы еще ничего не добавили нажмите +, чтобы добавить новое растение
+            </p>
+            <a href="./search.html" class="content__btn">
+				<span></span>
+            </a>
+          </div>
+		  <a href="./search.html" class="content__btn--bottom active" id="faveBottomBtn">
+			<span></span>
+		</a>
+      </div>
+      <div class="content hidden" id="contentPage2">
+        <div class="container">
+          <!-- <div class="favorites-list" id="favoritesList"></div> -->
+          <div class="content__empty text-center" id="emptyState2">
+            <div class="content__bg mb-xxl">
+              	<svg class="decor__plant">
+      				<use href="../assets/images/decor.svg#decor-plant"></use>
+    			</svg>
+            </div>
+            <p class="content__empty-text mb-lg">
+              Букет еще не создан <br> нажмите +, чтобы создать букет своими руками
+            </p>
+            <a href="#" class="content__btn bouquet">
+            	<span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__menu">
+        <ul class="menu__inner">
+          <li class="menu__item">
+            <a href="../index.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#home-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./search.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#search-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./calendar.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use  href="../assets/images/icons/menu.svg#calendar-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./favorites.html" class="menu__item-link">
+              <svg class="menu__icon-accent">
+                <use href="../assets/images/icons/menu.svg#plant-menu"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+	<script src="../js/theme-manager.js"></script>
+	<script src="../js/flowers-data.js"></script>
+	<script src="../js/favorites-manager.js"></script>
+	<script src="../js/favorites.js"></script>
+	<script src="../js/font-size.js"></script>	
+</body>
+</html>

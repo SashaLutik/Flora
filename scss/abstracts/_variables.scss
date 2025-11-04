@@ -1,0 +1,75 @@
+$themes: (
+  light: (
+    bg: #efe7db,
+    decor_bg: #dce3cb,
+    primary: #be634f,
+    secondary: #c3c8aa,
+    text: #546640,
+    decor_text: #9ab288,
+	decor_dark: #87a17533,
+	decor_light: #8fa06e80,
+    translucent: #0000004d,
+	text_white: #ffffff
+  ),
+  dark: (
+    bg: #0a0d09,
+    decor_bg: #121610,
+    primary: #9c5645,
+    secondary: #272e26,
+    text: #a3a098,
+    decor_text: #455043,
+	decor_dark: #81827633,
+	decor_light: #505d4b80,
+    translucent: #ffffff4d,
+	text_white: #ffffff
+  ),
+  peach: (
+    bg: #fff6e2,
+    decor_bg: #ffe0d3,
+    primary: #6b936f,
+    secondary: #ffcab6,
+    text: #6d6250,
+    decor_text: #f3a383,
+	decor_dark: #e2806933,
+	decor_light: #ff9e8880,
+    translucent: #0000004d,
+	text_white: #ffffff
+  ),
+  spring: (
+    bg: #f5f2eb,
+    decor_bg: #f3d7d8,
+    primary: #54836c,
+    secondary: #f2bdb6,
+    text: #5d564d,
+    decor_text: #e3937f,
+	decor_dark: #67894f33,
+	decor_light: #eda7a080,
+    translucent: #0000004d,
+	text_white: #ffffff
+  ),
+);
+:root {
+  --font-size-small: 0.875rem;    // 14px
+  --font-size-base: 1rem;         // 16px  
+  --font-size-medium: 1.125rem;   // 18px
+  --font-size-large: 1.25rem;     // 20px
+  --font-size-xl: 1.5rem;         // 24px
+  --font-size-xxl: 2rem;          // 32px
+  
+  --current-font-size: normal;
+}
+$font-family: (
+  primary: ('Balsamiq Sans', sans-serif),
+  secondary: ('Bellota', sans-serif)
+)!default;
+
+$spacing: (
+  xs: 0.3125rem,  // 5px  - extra small
+  sm: 0.625rem,   // 10px  - small
+  md: 0.9375rem,  // 15px - medium
+  lg: 1.25rem,    // 20px - large
+  xl: 1.5625rem,  // 25px - extra large
+  xxl: 1.875rem,   // 30px - extra extra large
+  size_45: 2.8125rem,
+  size_90: 5.625rem
+) !default;

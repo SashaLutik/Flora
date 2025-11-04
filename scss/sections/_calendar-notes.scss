@@ -1,0 +1,59 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.calendar__page{
+	.notes {
+    &__inner {
+      @include position(fixed, $right: 0, $bottom: 0, $left: 0, $z-index: 505);
+      @include theme-colors($color: text_white, $bg: primary);
+      border-radius: 20px 20px 0 0;
+      padding: 25px 0 60px;
+      transform: translateY(100%);
+      transition: 0.3s;
+      &.active {
+        transform: translateY(0);
+      }
+    }
+    &__panel {
+      @include d-flex(space-between, center);
+    }
+
+    &__btn {
+      cursor: pointer;
+	  font-size: var(--font-size-base);
+      &.active {
+		@include d-flex(flex-end, normal);
+      }
+    }
+    &__edit-btn {
+      margin-right: 25px;
+    }
+    &__delete-btn {
+      @include theme-colors($color: translucent);
+    }
+    &__close {
+      padding: 20px 10px;
+      cursor: pointer;
+      span {
+        @include size(25px, 1.5px);
+        @include theme-colors($bg: text_white);
+        border-radius: 5px;
+        transform: rotate(45deg);
+      }
+      span::after {
+		@include after(25px, 1.5px, $bg: text_white);
+        border-radius: 5px;
+        transform: rotate(90deg);
+      }
+    }
+    &__text-box {
+	  @include min-height(30vh, 30dvh);
+      font-family: map.get($font-family, secondary);
+    }
+    &__overlay {
+      @include position(fixed, $top: 0, $right: 0, $bottom: 0, $left: 0, $z-index: 502);
+      @include size(100%, 100%);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

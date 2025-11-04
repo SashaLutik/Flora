@@ -1,0 +1,104 @@
+@use 'sass:map';
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as variab;
+
+p, h1, h2, h3, h4, h5{overflow-wrap: break-word;}
+
+body {
+  @include mix.theme-colors($color: text, $bg: bg);
+  font-family: map.get(variab.$font-family, primary);
+  font-size: var(--font-size-medium);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+.container {
+  width: 100%;
+  @include mix.m-width(1200px);
+  padding: 0 20px;
+  
+  @media (max-width: 365px) {
+    padding: 0 10px;
+  }
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+//margin
+.mt-xs { margin-top: map.get(variab.$spacing, xs); }
+.mt-sm { margin-top: map.get(variab.$spacing, sm); }
+.mt-md { margin-top: map.get(variab.$spacing, md); }
+.mt-lg { margin-top: map.get(variab.$spacing, lg); }
+.mt-xl { margin-top: map.get(variab.$spacing, xl); }
+.mt-xxl { margin-top: map.get(variab.$spacing, xxl); }
+
+.mr-10 { margin-right: map.get(variab.$spacing, sm); }
+.mr-15 { margin-right: map.get(variab.$spacing, md); }
+.mr-20 { margin-right: map.get(variab.$spacing, lg); }
+
+.mb-xs { margin-bottom: map.get(variab.$spacing, xs); }
+.mb-sm { margin-bottom: map.get(variab.$spacing, sm); }
+.mb-md { margin-bottom: map.get(variab.$spacing, md); }
+.mb-lg { margin-bottom: map.get(variab.$spacing, lg); }
+.mb-xl { margin-bottom: map.get(variab.$spacing, xl); }
+.mb-xxl { margin-bottom: map.get(variab.$spacing, xxl); }
+.mb-45 { margin-bottom: map.get(variab.$spacing, size_45); }
+//padding
+.pt-xs { padding-top: map.get(variab.$spacing, xs); }
+.pt-sm { padding-top: map.get(variab.$spacing, sm); }
+.pt-md { padding-top: map.get(variab.$spacing, md); }
+.pt-lg { padding-top: map.get(variab.$spacing, lg); }
+.pt-xl { padding-top: map.get(variab.$spacing, xl); }
+.pt-xxl { padding-top: map.get(variab.$spacing, xxl); }
+
+.pb-xs { padding-bottom: map.get(variab.$spacing, xs); }
+.pb-sm { padding-bottom: map.get(variab.$spacing, sm); }
+.pb-md { padding-bottom: map.get(variab.$spacing, md); }
+.pb-lg { padding-bottom: map.get(variab.$spacing, lg); }
+.pb-xl { padding-bottom: map.get(variab.$spacing, xl); }
+.pb-xxl { padding-bottom: map.get(variab.$spacing, xxl); }
+.pb-90 { padding-bottom: map.get(variab.$spacing, size_90); }
+
+// Темы
+:root,
+:root.light-theme {
+  @each $name, $value in map.get(variab.$themes, light) {
+    --col_#{$name}: #{$value};
+  }
+}
+
+:root.peach-theme {
+  @each $name, $value in map.get(variab.$themes, peach) {
+    --col_#{$name}: #{$value};
+  }
+}
+
+:root.spring-theme {
+  @each $name, $value in map.get(variab.$themes, spring) {
+    --col_#{$name}: #{$value};
+  }
+}
+
+:root.dark-theme {
+  @each $name, $value in map.get(variab.$themes, dark) {
+    --col_#{$name}: #{$value};
+  }
+}
+
+.hidden{display: none;}
+.flex {display: flex;}
+.block {display: block;}
+.inline {display: inline;}
+.inline-block {display: inline-block;}
+body.no-scroll{overflow: hidden;}
+
+.plant1 {@include mix.size(109px, 192px)}
+.plant2 {@include mix.size(95px, 145px)}
+.plant3 {@include mix.size(130px, 210px)}
+.plant4 {@include mix.size(91px, 201px)}
+.plant5 {@include mix.size(112px, 167px)}
+.plant6 {@include mix.size(115px, 129px)}
+.decor__plant{@include mix.size(175px, 175px); margin: 0 auto;}
+
+.plant1, .plant2, .plant3, .plant4, .plant5, .plant6, .decor__plant {@include mix.theme-colors($color: decor_bg);}

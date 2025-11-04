@@ -1,0 +1,92 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.calendar__page {
+  .calendar {
+    &__panel {
+      @include d-flex(space-between, center);
+    }
+    &__date {
+      @include d-flex(normal, baseline);
+    }
+    &__icon {
+      @include size(22px, 22px);
+    }
+    &__title {
+      margin: 0 10px 0 15px;
+    }
+    &__panel-btn {
+      @include d-flex(center, center);
+      & .arrow-btn {
+        @include d-flex(center, center);
+        padding: 20px;
+        cursor: pointer;
+      }
+    }
+    &__prev {
+      transform: rotate(180deg);
+    }
+    &__arrow {
+      @include size(12px, 2.5px);
+      @include theme-colors($bg: text);
+      border-radius: 5px;
+      transform: rotate(45deg);
+      margin-left: -6px;
+      &::after {
+		@include after(12px, 2.5px, $bg: text);
+        border-radius: 5px;
+        transform: rotate(92deg);
+        margin: -5px 0 0 5px;
+      }
+    }
+
+    &__list-header {
+      @include d-flex(space-between, normal);
+      @include theme-colors($color: text_white, $bg: primary);
+      padding: 15px 19px 10px;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 3px;
+      &span {
+        font-family: map.get($font-family, secondary);
+        text-transform: uppercase;
+      }
+    }
+    &__list-main {
+      @include theme-colors($bg: primary);
+      border-radius: 0 0 10px 10px;
+      padding: 22px 18px 25px 18px;
+    }
+    &__day {
+      @include d-flex(center, normal);
+      @include theme-colors($color: text_white);
+      font-family: map.get($font-family, secondary);
+    }
+    &__day--today {
+      @include position(relative, $z-index: 1);
+      &::after {
+        @include after(34px, 34px, $bg: translucent);
+        @include position(absolute, $top: -5px, $z-index: -1);
+        border-radius: 30px;
+      }
+    }
+    &__day--selected {
+      @include position(relative, $z-index: 1);
+      &::after {
+		@include after(34px, 34px);
+        @include position(absolute, $top: -5px, $z-index: -1);
+        @include border(30px, $width: 1px, $style: solid, $color: text_white);
+      }
+    }
+    &__day--has-note {
+      @include position(relative, $z-index: 1);
+      &::after {
+		@include after(34px, 34px, $bg: decor_text);
+        @include position(absolute, $top: -5px, $z-index: -1);
+        border-radius: 30px;
+      }
+    }
+  }
+  .arrow__icon {
+    @include size(16px, 9px);
+  }
+}

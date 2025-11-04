@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '../abstracts/variables' as variab;
+@use '../abstracts/mixins' as mix;
+
+body {
+  @include mix.theme-colors($color: text);
+  font-family: map.get(variab.$font-family, primary);
+  font-size: var(--font-size-medium);
+}
+
+h1 {font-size: var(--font-size-xxl);
+font-family: map.get(variab.$font-family, primary);}
+
+h2 {font-size: var(--font-size-xl);}
+
+h3 {font-size: var(--font-size-large);}
+
+h4 {font-size: var(--font-size-medium);}
+h5 {font-size: var(--font-size-small);}
+
+a {@include mix.theme-colors($color: text);}

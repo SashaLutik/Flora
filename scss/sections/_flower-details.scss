@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.flower__page {
+  .details {
+    &__bg {
+      @include position(relative, $z-index: -1);
+    }
+    &__cards {
+      @include d-flex(space-between, stretch);
+    }
+    &__cards-item {
+      @include d-flex(normal, center, $direction: column);
+      @include theme-colors($bg: decor_light);
+      border-radius: 10px;
+      padding: 15px 7px 10px;
+      margin-right: 13px;
+      flex-basis: 100%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__cards-icon p {
+      @include theme-colors($color: primary);
+    }
+    &__cards-text {
+      @include d-flex(center, center);
+      @include theme-colors($bg: decor_text);
+      border-radius: 5px;
+      padding: 3px 8px;
+      min-height: 42px;
+      align-self: stretch;
+      font-family: map.get($font-family, secondary);
+    }
+  }
+  .plant2 {
+    @include position(absolute, $top: 48px, $left: 0);
+  }
+  .plant6 {
+    @include position(absolute, $top: 37px, $right: 0);
+  }
+  .card__icon {
+	@include size(35px, 35px);
+	@include theme-colors($color: primary);
+  }
+  .padding {
+    padding: 5px 10px;
+  }
+}

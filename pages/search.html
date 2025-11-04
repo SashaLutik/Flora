@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Поиск</title>
+  </head>
+  <body class="search__page">
+    <header class="header">
+      <div class="search">
+        <div class="container">
+          <div class="search__inner mt-xxl mb-lg">
+            <input class="search__input" type="text" placeholder="Поиск..." />
+            <button class="search__button">
+              <svg
+                class="search__btn"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke="currentColor"
+                  d="M13.6497 13.6529L17 17M15.8291 8.40741C15.8291 12.4984 12.5095 15.8148 8.41455 15.8148C4.3196 15.8148 1 12.4984 1 8.40741C1 4.31641 4.3196 1 8.41455 1C12.5095 1 15.8291 4.31641 15.8291 8.40741Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <svg class="plant1">
+        <use href="../assets/images/decor.svg#decor1"></use>
+      </svg>
+      <svg class="plant2">
+        <use href="../assets/images/decor.svg#decor2"></use>
+      </svg>
+      <svg class="plant5">
+        <use href="../assets/images/decor.svg#decor5"></use>
+      </svg>
+      <svg class="plant6">
+        <use href="../assets/images/decor.svg#decor6"></use>
+      </svg>
+      <div class="plant">
+        <div class="container">
+          <ul class="plant__list"></ul>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__menu">
+        <ul class="menu__inner">
+          <li class="menu__item">
+            <a href="../index.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#home-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./search.html" class="menu__item-link">
+              <svg class="menu__icon-accent">
+                <use href="../assets/images/icons/menu.svg#search-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./calendar.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#calendar-menu"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="./favorites.html" class="menu__item-link">
+              <svg class="menu__icon">
+                <use href="../assets/images/icons/menu.svg#plant-menu"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="../js/flowers-data.js"></script>
+    <script src="../js/search.js"></script>
+	<script src="../js/theme-manager.js"></script>
+	<script src="../js/font-size.js"></script>	
+  </body>
+
+</html>

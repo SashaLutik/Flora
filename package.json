@@ -1,0 +1,9 @@
+{
+  "sourse": "index.html",
+  "scripts": {
+    "start": "sass --style=compressed --watch scss:css"
+  },
+  "dependencies": {
+    "sass": "^1.93.2"
+  }
+}

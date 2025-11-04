@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.flower__page {
+  .info {
+    position: relative;
+    &__bg {
+      @include position(relative, $z-index: -1);
+    }
+    &__list-item {
+      @include theme-colors($bg: decor_dark);
+      padding: 8px 15px;
+      border-radius: 5px;
+      box-shadow: 1px 2px 4px #00000040;
+    }
+    &__item-text span {
+      font-family: map.get($font-family, secondary);
+    }
+  }
+  .plant5 {
+    @include position(absolute, $top: 90px, $left: -20px);
+    transform: scaleX(-1);
+  }
+  .plant1 {
+    @include position(absolute, $top: 20px, $right: 0);
+  }
+}

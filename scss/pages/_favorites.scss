@@ -1,0 +1,131 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.favorites__page {
+  .panel {
+    &__inner {
+      @include d-flex(space-between, baseline);
+    }
+    &__btn.active {
+      @include theme-colors($color: primary);
+      @include d-flex(normal, normal, $direction: column);
+      & span {
+        @include size(100%, 4px);
+        transition: width 0.3s;
+      }
+    }
+    &__btn span {
+      @include size(0, 4px);
+      @include theme-colors($bg: primary);
+      border-radius: 2px;
+    }
+  }
+
+  .content {
+    padding-bottom: 100px;
+    &__empty {
+      @include m-width(270px);
+      padding-top: 60px;
+    }
+    &__empty-text {
+      @include theme-colors($color: translucent);
+      font-family: map.get($font-family, secondary);
+      font-size: var(--font-size-base);
+    }
+    &__btn {
+      @include theme-colors($bg: primary);
+      @include d-flex(center, center);
+      @include size(61px, 61px);
+      margin: 0 auto;
+      border-radius: 30px;
+    }
+    &__btn span {
+      @include size(25px, 3.3px);
+      border-radius: 5px;
+      @include theme-colors($bg: secondary);
+      &::after {
+        @include after(25px, 3.5px, $bg: secondary, $rotate: 90deg);
+        border-radius: 5px;
+      }
+    }
+    &__btn.bouquet {
+      @include theme-colors($bg: secondary);
+    }
+    &__btn.bouquet span {
+      @include theme-colors($bg: primary);
+      &::after {
+        @include theme-colors($bg: primary);
+      }
+    }
+
+    &__btn--bottom {
+		@include position(fixed, $right: 20px, $bottom: 70px);
+      @include theme-colors($bg: primary);
+      @include d-flex(center, center);
+      @include size(61px, 61px);
+      border-radius: 30px;
+	  transform: translate(calc(100% + 20px));
+	  &.active{
+		transform: translate(0);
+	  }
+    }
+    &__btn--bottom span {
+      @include size(25px, 3.3px);
+      border-radius: 5px;
+      @include theme-colors($bg: secondary);
+      &::after {
+        @include after(25px, 3.5px, $bg: secondary, $rotate: 90deg);
+        border-radius: 5px;
+      }
+    }
+    &__list-item {
+      @include theme-colors($bg: decor_dark);
+      position: relative;
+      border-radius: 10px;
+      padding: 12px;
+    }
+    &__list-link {
+      @include d-flex(normal, center);
+    }
+
+    &__list-image img {
+      @include size(48px, 48px);
+      border-radius: 50px;
+    }
+
+    &__list-info {
+      margin-left: 10px;
+    }
+
+    &__item-btn {
+      cursor: pointer;
+      @include position(absolute, $top: 50%, $right: 0);
+      transform: translateY(-50%);
+      padding: 20px 25px;
+      & span {
+        @include size(4px, 4px);
+        @include theme-colors($bg: text);
+        margin-bottom: 3px;
+        border-radius: 5px;
+      }
+    }
+    &__container-btn {
+      @include d-flex(normal, flex-end, $direction: column);
+      @include position(absolute, $right: 24px, $bottom: -35px, $z-index: 40);
+      @include theme-colors($bg: secondary);
+      padding: 12px 10px;
+      border-radius: 5px;
+
+      & p {
+        font-family: map.get($font-family, secondary);
+        font-size: var(--font-size-small);
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+    &__list-remove {
+      @include theme-colors($color: primary);
+    }
+  }
+}

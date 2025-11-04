@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.search__page {
+  .search {
+    @include position(fixed, $top: 0, $right: 0, $left: 0);
+    @include theme-colors($bg: bg);
+    box-shadow: 0px 3px 10px #0000000d;
+    &__inner {
+      @include d-flex(space-between, center);
+      @include theme-colors($bg: decor_dark);
+      padding: 0 15px;
+      border-radius: 12px;
+    }
+    &__input {
+      font-family: map.get($font-family, secondary);
+      flex-basis: 100%;
+      &::placeholder {
+        @include theme-colors($color: text);
+      }
+    }
+    &__button {
+      padding: 8px 10px;
+    }
+    &__btn {
+      @include size(18px, 18px);
+    }
+  }
+  .plant1 {
+    @include position(fixed, $bottom: 17px, $left: -25px, $z-index: -900);
+    transform: scaleX(-1);
+  }
+  .plant2 {
+    @include position(fixed, $bottom: 175px, $right: -27px, $z-index: -900);
+    transform: scaleX(-1);
+    @media (max-height: 630px) {
+      display: none;
+    }
+  }
+  .plant5 {
+    @include position(fixed, $top: 98px, $right: -23px, $z-index: -900);
+  }
+  .plant6 {
+    @include position(fixed, $bottom: 30px, $right: 0, $z-index: -900);
+    @media (max-height: 430px) {
+      display: none;
+    }
+  }
+  .main {
+    padding-top: 100px;
+  }
+  .plant {
+    &__list {
+      padding-bottom: 80px;
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__item {
+      padding: 5px 10px 5px 5px;
+    }
+    &__item-link {
+      @include d-flex(normal, center);
+    }
+    &__img-box img {
+      @include size(100%, 100%);
+      min-width: 75px;
+      border-radius: 10px;
+    }
+    &__content {
+      padding-left: 15px;
+    }
+    &__text {
+      font-family: map.get($font-family, secondary);
+    }
+    &__empty {
+      @include theme-colors($color: decor_text);
+    }
+  }
+}

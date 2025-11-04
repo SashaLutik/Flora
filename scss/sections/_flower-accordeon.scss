@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.flower__page {
+  .accordion {
+    padding-bottom: 60px;
+    &__item {
+      @include theme-colors($bg: secondary);
+      border-radius: 10px;
+      padding: 15px 15px 20px 15px;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__item-panel {
+      @include d-flex(space-between, center);
+    }
+    &__item-name {
+      @include d-flex(normal, flex-end);
+    }
+    &__item-decor {
+      @include size(22px, 20px);
+      margin-right: 10px;
+    }
+    &__item-btn {
+      @include size(24px, 24px);
+      @include d-flex(center, center);
+      @include theme-colors($bg: decor_text);
+      border-radius: 30px;
+      transition: 0.3s;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+    &__arrow {
+      @include size(8.3px, 2.5px);
+      @include theme-colors($bg: secondary);
+      border-radius: 5px;
+      transform: rotate(46deg);
+      margin-left: -5px;
+      &::after {
+        content: "";
+        @include size(8.3px, 2.5px);
+        @include theme-colors($bg: secondary);
+        border-radius: 5px;
+        transform: rotate(87deg);
+        display: block;
+        margin: -3px 0 0 3px;
+      }
+    }
+    &__list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      &.active {
+        max-height: 700px;
+      }
+    }
+    &__img-box {
+      overflow: hidden;
+      & img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+    &__text-box {
+      font-family: map.get($font-family, secondary);
+    }
+  }
+}

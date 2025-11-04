@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../importer" as *;
+@forward "../sections/calendar-notification";
+@forward "../sections/calendar-panel";
+@forward "../sections/calendar-notes";
+@forward "../sections/calendar-popup";
+
+.calendar__page{
+	.main{
+		padding-bottom: 80px;
+	}
+}

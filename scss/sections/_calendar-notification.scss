@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.calendar__page{
+	.notification {
+    &__list {
+      padding: 0 20px;
+    }
+    &__item:last-child {
+      margin-right: 0;
+    }
+    &__link-box {
+      @include d-inflex(center, center);
+      border-radius: 50px;
+      &.all {
+        padding: 20px;
+        @include border(50px, $width: 1px, $style: solid, $color: primary);
+      }
+    }
+    &__name {
+      font-family: map.get($font-family, secondary);
+    }
+  }
+  .all-icon {
+    @include size(18px, 18px);
+    @include theme-colors($color: primary);
+  }
+}

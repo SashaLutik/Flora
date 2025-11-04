@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../abstracts/variables" as variab;
+@use "../abstracts/mixins" as mix;
+.footer {
+  position: relative;
+
+  &__menu {
+    @include mix.position(fixed, $right: 0, $bottom: 0, $left: 0, $z-index:500);
+	@include mix.theme-colors($bg: secondary);
+    padding: 15px 0;
+    padding-bottom: calc(15px + env(safe-area-inset-bottom));
+    border-radius: 20px 20px 0 0;
+  }
+}
+.menu {
+  &__inner {
+    @include mix.d-flex(center, center);
+  }
+
+  &__item {
+    margin: 0 map.get(variab.$spacing, xxl);
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__icon-accent {
+    @include mix.size(26px, 26px);
+    @include mix.theme-colors($color: primary);
+  }
+
+  &__icon {
+    @include mix.size(26px, 26px);
+	@include mix.theme-colors($color: decor_text);
+  }
+}

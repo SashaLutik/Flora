@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "../importer" as *;
+
+.calendar__page{
+	.popup {
+  @include position(fixed, $top: 0, $right: 0, $bottom: 0, $left: 0, $z-index: 510);
+  transform: translateX(100%);
+  transition: 0.3s;
+  &.active {
+    transform: translateX(0%);
+  }
+  @include theme-colors($bg: bg);
+  &__content {
+    @include size(100%, 100%);
+    @include d-flex(normal, normal, $direction: column);
+  }
+  &__panel {
+    @include theme-colors($bg: primary);
+    box-shadow: 0px 3px 10px #00000040;
+  }
+  &__nav {
+    @include d-flex(center, center);
+    padding: 25px 0 20px;
+    position: relative;
+  }
+  &__prev {
+    @include position(absolute, $left: 0);
+    @include size(24px, 24px);
+  }
+  &__title {
+    @include theme-colors($color: text_white);
+  }
+  &__inner {
+    @include d-flex(normal, normal, $direction: column);
+    flex: 1;
+    padding: 0 20px 115px;
+  }
+  &__input {
+    flex: 1;
+    width: 100%;
+    resize: none;
+    &::placeholder {
+      @include theme-colors($color: decor_text);
+      font-family: map.get($font-family, secondary);
+	  font-size: var(--font-size-large);
+    }
+  }
+  &__action {
+    @include theme-colors($bg: bg);
+    @include position(fixed, $right: 0, $bottom: 0, $left: 0, $z-index: 515);
+    padding: 20px 20px 40px;
+  }
+  &__save-btn {
+    @include theme-colors($color: text_white, $bg: primary);
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+}
